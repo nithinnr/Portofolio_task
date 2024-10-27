@@ -1,0 +1,48 @@
+.nav1{
+    display: flex;
+    justify-content: center;
+}
+.navi{
+    text-decoration: none;
+    color: rgb(250, 248, 248);
+    /* padding-left: 50px;
+    padding-top: 20px; */
+    margin-left: 50px;
+    margin-top: 20px;
+
+}
+body{
+    background-color: rgb(43, 41, 41);
+}
+img{
+    margin-left: 270px;
+    margin-top: 100px;
+    border-radius: 20px;
+}
+.certificates{
+    color: white;
+    display: flex;
+
+}
+
+h1{
+    margin-top: 100px;
+    margin-left: 150px;
+}
+.leftc{
+    margin-top: 170px;
+    margin-left: -300px;
+}
+.rightc{
+    margin-top: -185px;
+    margin-left:-20px;
+}
+.vertical_line{
+    border-left: 2px solid black;
+    height: 220px;
+    position: absolute;
+    bottom: 145px;
+    right: 530px;
+
+    
+}
