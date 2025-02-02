@@ -9,7 +9,7 @@ pool:
 steps:
   - task: AzureCLI@2
     inputs:
-      azureSubscription: 'Your-Azure-Subscription-Name'
+      azureSubscription: 'nithinreddynr1029@gmail.com '  # Name of your Azure service connection 
       scriptType: 'pscore'
       scriptLocation: 'inlineScript'
       inlineScript: |
@@ -20,4 +20,4 @@ steps:
           --condition "avg Percentage CPU > 80" \
           --description 'Alert when CPU usage exceeds 80%' \
           --action-group '/subscriptions/{subscription-id}/resourceGroups/MyResourceGroup/providers/microsoft.insights/actionGroups/MyActionGroup'
-    displayName: 'Create CPU Alert'
+      displayName: 'Create CPU Alert'
