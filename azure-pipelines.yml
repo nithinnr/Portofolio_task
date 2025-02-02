@@ -7,7 +7,17 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-  - task: AzureMonitorAlerts@1
+  - task: AzureCLI@2
     inputs:
-      resourceGroupName: 'MyResourceGroup'
-      alertRulesName: 'CPU_Usage_High'
+      azureSubscription: 'Your-Azure-Subscription-Name'  # Name of your Azure service connection
+      scriptType: 'pscore'
+      scriptLocation: 'inlineScript'
+      inlineScript: |
+        az monitor metrics alert create \
+          --name 'CPU_Usage_High' \
+          --resource-group 'MyResourceGroup' \
+          --scopes '/subscriptions/{subscription-id}/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/virtualMachines/MyVM' \
+          --condition "avg Percentage CPU > 80" \
+          --description 'Alert when CPU usage exceeds 80%' \
+          --action-group '/subscriptions/{subscription-id}/resourceGroups/MyResourceGroup/providers/microsoft.insights/actionGroups/MyActionGroup'
+      displayName: 'Create CPU Alert'
